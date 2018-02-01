@@ -18,8 +18,6 @@ RUN docker-php-ext-enable xdebug
 
 RUN pecl install mongodb
 
-RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini
-
 RUN rm -f /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini >/dev/null 2>/dev/null
 
 RUN composer install --prefer-dist -o -d /usr/local/ci
