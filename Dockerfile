@@ -13,6 +13,7 @@ VOLUME /root/composer/cache
 RUN apt-install libxslt-dev
 
 RUN docker-php-ext-install xsl
+RUN docker-php-ext-install ssh2
 
 RUN composer install --prefer-dist -o -d /usr/local/ci
 
