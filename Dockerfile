@@ -11,7 +11,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 VOLUME /root/composer/cache
 
 RUN apt update
-RUN apt install libxslt-dev
+RUN apt install libxslt1-dev
 
 RUN docker-php-ext-install xsl
 RUN docker-php-ext-install ssh2
