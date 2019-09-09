@@ -11,14 +11,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 VOLUME /root/composer/cache
 
 RUN apt update
+RUN apt install -yq libssh2-1-dev libssh2-1
 RUN apt install -yq libxslt1-dev
 
-RUN docker-php-ext-install xsl
-RUN docker-php-ext-install ssh2
-
-RUN docker-php-ext-enable xdebug
-
 RUN pecl install mongodb
+RUN pecl install ssh2-1.1.2
+
+RUN docker-php-ext-install xsl
 
 RUN rm -f /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini >/dev/null 2>/dev/null
 
