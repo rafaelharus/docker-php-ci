@@ -18,6 +18,7 @@ RUN pecl install mongodb
 RUN pecl install ssh2-1.1.2
 
 RUN docker-php-ext-install xsl
+RUN docker-php-ext-enable ssh2
 
 RUN rm -f /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini >/dev/null 2>/dev/null
 
